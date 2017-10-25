@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alarms xmlns="http://tempuri.org/XMLSchema1.xsd">
+  <alarm element="NO2">
+    <alarmId>alarmId31</alarmId>
+    <localization>Leiria</localization>
+    <date>
+      <day>1</day>
+      <month>Out</month>
+      <year>2017</year>
+    </date>
+  </alarm>
+  <alarm element="CO">
+    <alarmId>alarmId2918</alarmId>
+    <localization>Lisboa</localization>
+    <date>
+      <day>30</day>
+      <month>Ago</month>
+      <year>2017</year>
+    </date>
+  </alarm>
+  <alarm element="O3">
+    <alarmId>alarmId0002</alarmId>
+    <localization>Coimbra</localization>
+    <date>
+      <day>21</day>
+      <month>Mar</month>
+      <year>2016</year>
+    </date>
+  </alarm>
+  <alarm element="O3">
+    <alarmId>alarmId09987</alarmId>
+    <localization>Lisboa</localization>
+    <date>
+      <day>21</day>
+      <month>Out</month>
+      <year>2016</year>
+    </date>
+  </alarm>
+  <alarm element="NO2">
+    <alarmId>alarmId4402</alarmId>
+    <localization>Coimbra</localization>
+    <date>
+      <day>18</day>
+      <month>Ago</month>
+      <year>2017</year>
+    </date>
+  </alarm>
+  <alarm element="CO">
+    <alarmId>alarmId404</alarmId>
+    <localization>Aveiro</localization>
+    <date>
+      <day>21</day>
+      <month>Set</month>
+      <year>2017</year>
+    </date>
+  </alarm>
+</alarms>
