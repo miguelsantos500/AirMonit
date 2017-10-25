@@ -30,8 +30,8 @@
         {
             this.comboBoxCities = new System.Windows.Forms.ComboBox();
             this.lblCities = new System.Windows.Forms.Label();
-            this.lstViewInfo = new System.Windows.Forms.ListView();
             this.groupBoxAlarms = new System.Windows.Forms.GroupBox();
+            this.btnFindAlarms = new System.Windows.Forms.Button();
             this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.datePikerStart = new System.Windows.Forms.DateTimePicker();
@@ -45,6 +45,7 @@
             this.btnNO2 = new System.Windows.Forms.Button();
             this.lblDayStatistics = new System.Windows.Forms.Label();
             this.datePickerStatistics = new System.Windows.Forms.DateTimePicker();
+            this.listAlarmsInfo = new System.Windows.Forms.ListBox();
             this.groupBoxAlarms.SuspendLayout();
             this.groupBoxUsers.SuspendLayout();
             this.groupBoxStatistics.SuspendLayout();
@@ -71,23 +72,14 @@
             this.lblCities.TabIndex = 1;
             this.lblCities.Text = "Choose city";
             // 
-            // lstViewInfo
-            // 
-            this.lstViewInfo.Location = new System.Drawing.Point(8, 244);
-            this.lstViewInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.lstViewInfo.Name = "lstViewInfo";
-            this.lstViewInfo.Size = new System.Drawing.Size(341, 242);
-            this.lstViewInfo.TabIndex = 2;
-            this.lstViewInfo.UseCompatibleStateImageBehavior = false;
-            this.lstViewInfo.View = System.Windows.Forms.View.List;
-            // 
             // groupBoxAlarms
             // 
+            this.groupBoxAlarms.Controls.Add(this.listAlarmsInfo);
+            this.groupBoxAlarms.Controls.Add(this.btnFindAlarms);
             this.groupBoxAlarms.Controls.Add(this.datePickerEnd);
             this.groupBoxAlarms.Controls.Add(this.label1);
             this.groupBoxAlarms.Controls.Add(this.datePikerStart);
             this.groupBoxAlarms.Controls.Add(this.lblAlarmsBetween);
-            this.groupBoxAlarms.Controls.Add(this.lstViewInfo);
             this.groupBoxAlarms.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAlarms.Location = new System.Drawing.Point(35, 127);
             this.groupBoxAlarms.Margin = new System.Windows.Forms.Padding(4);
@@ -98,10 +90,22 @@
             this.groupBoxAlarms.TabStop = false;
             this.groupBoxAlarms.Text = "Alarms";
             // 
+            // btnFindAlarms
+            // 
+            this.btnFindAlarms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnFindAlarms.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindAlarms.Location = new System.Drawing.Point(219, 185);
+            this.btnFindAlarms.Name = "btnFindAlarms";
+            this.btnFindAlarms.Size = new System.Drawing.Size(105, 38);
+            this.btnFindAlarms.TabIndex = 9;
+            this.btnFindAlarms.Text = "Find";
+            this.btnFindAlarms.UseVisualStyleBackColor = false;
+            this.btnFindAlarms.Click += new System.EventHandler(this.btnFindAlarms_Click);
+            // 
             // datePickerEnd
             // 
             this.datePickerEnd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePickerEnd.Location = new System.Drawing.Point(165, 180);
+            this.datePickerEnd.Location = new System.Drawing.Point(13, 173);
             this.datePickerEnd.Margin = new System.Windows.Forms.Padding(4);
             this.datePickerEnd.Name = "datePickerEnd";
             this.datePickerEnd.Size = new System.Drawing.Size(184, 26);
@@ -121,7 +125,7 @@
             // 
             this.datePikerStart.CalendarFont = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePikerStart.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePikerStart.Location = new System.Drawing.Point(165, 76);
+            this.datePikerStart.Location = new System.Drawing.Point(13, 80);
             this.datePikerStart.Margin = new System.Windows.Forms.Padding(4);
             this.datePikerStart.Name = "datePikerStart";
             this.datePikerStart.Size = new System.Drawing.Size(184, 26);
@@ -247,6 +251,15 @@
             this.datePickerStatistics.Size = new System.Drawing.Size(201, 28);
             this.datePickerStatistics.TabIndex = 0;
             // 
+            // listAlarmsInfo
+            // 
+            this.listAlarmsInfo.FormattingEnabled = true;
+            this.listAlarmsInfo.ItemHeight = 27;
+            this.listAlarmsInfo.Location = new System.Drawing.Point(13, 233);
+            this.listAlarmsInfo.Name = "listAlarmsInfo";
+            this.listAlarmsInfo.Size = new System.Drawing.Size(311, 247);
+            this.listAlarmsInfo.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,7 +288,6 @@
 
         private System.Windows.Forms.ComboBox comboBoxCities;
         private System.Windows.Forms.Label lblCities;
-        private System.Windows.Forms.ListView lstViewInfo;
         private System.Windows.Forms.GroupBox groupBoxAlarms;
         private System.Windows.Forms.Label lblAlarmsBetween;
         private System.Windows.Forms.DateTimePicker datePikerStart;
@@ -290,6 +302,8 @@
         private System.Windows.Forms.Button btnNO2;
         private System.Windows.Forms.Label lblDayStatistics;
         private System.Windows.Forms.DateTimePicker datePickerStatistics;
+        private System.Windows.Forms.Button btnFindAlarms;
+        private System.Windows.Forms.ListBox listAlarmsInfo;
     }
 }
 

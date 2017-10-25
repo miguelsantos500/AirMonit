@@ -16,5 +16,27 @@ namespace AirMonit_Admin
         {
             InitializeComponent();
         }
+
+        
+
+        private void btnFindAlarms_Click(object sender, EventArgs e)
+        {
+            /****nao deu com caminho completo*/
+            string filePathXml = "alarms.xml";
+            //buscar a cidade escolhida na combobox
+            //buscar data de inicio e data de fim
+
+            //apresentar os resultados a partir do ficheiro xml
+            HandlerAlarmsXML handler = new HandlerAlarmsXML(filePathXml);
+          
+            //preenche a lista com os ids dos alarmes
+            listAlarmsInfo.DataSource = handler.GetAlarmIds();
+
+            if (listAlarmsInfo.Items.Count > 0)
+            {
+                listAlarmsInfo.SelectedIndex = 0;
+            }
+
+        }
     }
 }
