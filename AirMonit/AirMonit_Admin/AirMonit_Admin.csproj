@@ -87,6 +87,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bin\Debug\AirMonit_Admin.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alarms.xml" />
+    <Content Include="bin\Debug\AirMonit_Admin.exe" />
+    <Content Include="bin\Debug\AirMonit_Admin.pdb" />
+    <Content Include="bin\Debug\alarms.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
