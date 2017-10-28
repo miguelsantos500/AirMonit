@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AirMonit_Admin
 {
-    public partial class Form1 : Form
+    public partial class Form_Admin : Form
     {
-        public Form1()
+        public Form_Admin()
         {
             InitializeComponent();
         }

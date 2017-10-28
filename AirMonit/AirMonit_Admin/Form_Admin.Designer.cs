@@ -1,6 +1,6 @@
 ﻿namespace AirMonit_Admin
 {
-    partial class Form1
+    partial class Form_Admin
     {
         /// <summary>
         /// Required designer variable.

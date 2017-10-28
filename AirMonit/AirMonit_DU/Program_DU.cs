@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 namespace AirMonit_DU
 {
-    class Program
+    class Program_DU
     {
         static void Main(string[] args)
         {
