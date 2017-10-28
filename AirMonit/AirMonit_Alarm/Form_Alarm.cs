@@ -13,11 +13,33 @@ namespace AirMonit_Alarm
     public partial class AirMonit_Alarm : Form
     {
         private bool alarmState;
+        private HandlerXML handlerXML;
+        private List<AlarmRule> alarmRules;
 
         public AirMonit_Alarm()
         {
             InitializeComponent();
             this.alarmState = false;
+            this.handlerXML = new HandlerXML();
+            bool isValid = this.handlerXML.ValidateXml();
+            if(!isValid)
+            {
+                MessageBox.Show(handlerXML.ValidationMessage + " Exiting...");
+                //Application.Exit();
+                Environment.Exit(1);
+            } else
+            {
+                this.alarmRules = this.handlerXML.GetAlarmRules();
+                /*
+                string temp = "";
+                foreach (var alarmRule in this.alarmRules)
+                {
+                    temp += alarmRule.Localization + ";" + alarmRule.Element + ";"
+                        + alarmRule.ElementValue + ";" + alarmRule.Condition + ";" + "\n";
+                }
+                MessageBox.Show(temp);
+                */
+            }
         }
 
         private void btnToggleAlarm_Click(object sender, EventArgs e)

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alarm_rules>
+  <alarm_rule element="NO2">
+    <localization>Leiria</localization>
+    <element_value>1000</element_value>
+    <condition>GREATER_THAN</condition>
+  </alarm_rule>
+</alarm_rules>

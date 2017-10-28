@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="alarm_rules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs ="0" name="alarm_rule">
+          <xs:complexType>
+            <xs:sequence> 
+              <xs:element name="localization" type="xs:string" />
+              <xs:element name="element_value" type="xs:unsignedInt" />
+              <xs:element name="condition">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="GREATER_THAN"/>
+                    <xs:enumeration value="LESSER_THAN"/>
+                    <xs:enumeration value="EQUALS"/>
+                    <xs:enumeration value="EQUAL_OR_GREATER_THAN"/>
+                    <xs:enumeration value="EQUAL_OR_LESSER_THAN"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="element" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="NO2"/>
+                  <xs:enumeration value="CO"/>
+                  <xs:enumeration value="O3"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
