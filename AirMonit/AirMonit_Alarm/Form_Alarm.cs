@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace AirMonit_Alarm
 {
@@ -19,7 +20,7 @@ namespace AirMonit_Alarm
         public AirMonit_Alarm()
         {
             InitializeComponent();
-            this.alarmState = false;
+            this.alarmState = true;
             this.handlerXML = new HandlerXML();
             bool isValid = this.handlerXML.ValidateXml();
             if(!isValid)
@@ -58,6 +59,69 @@ namespace AirMonit_Alarm
                 lblAlarmState.Text = "ON";
                 lblAlarmState.BackColor = Color.Lime;
             }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            XmlDocument doc = new XmlDocument();
+            XmlNode papa = doc.CreateNode("element", "AirEntry", "");
+            doc.AppendChild(papa);
+            XmlNode ceIdValue = doc.CreateNode("element", "CityElementID", "");
+            ceIdValue.InnerText = numUpDownCityElement.Value.ToString();
+            papa.AppendChild(ceIdValue);
+            XmlNode element = doc.CreateNode("element", "Element", "");
+            element.InnerText = txtBoxElement.Text;
+            papa.AppendChild(element);
+            XmlNode elemtValue = doc.CreateNode("element", "ElementValue", "");
+            elemtValue.InnerText = txtBoxValue.Text;
+            papa.AppendChild(elemtValue);
+            XmlNode date = doc.CreateNode("element", "date", "");
+            date.InnerText = txtBoxDate.Text;
+            papa.AppendChild(date);
+            XmlNode city = doc.CreateNode("element", "city", "");
+            city.InnerText = txtBoxLocalization.Text;
+            papa.AppendChild(city);
+
+            CheckForAlarms(doc);
+        }
+
+        private void CheckForAlarms(XmlDocument doc)
+        {
+            txtBoxAlarmXML.Text = "";
+            if (!this.alarmState)
+            {
+                return;
+            }
+
+            XmlNode bookNode = doc.SelectSingleNode("/AirEntry");
+            
+
+            string cityElementID = bookNode["CityElementID"].InnerText;
+            string element = bookNode["Element"].InnerText;
+            int elementValue = int.Parse(bookNode["ElementValue"].InnerText);
+            string date = bookNode["date"].InnerText;
+            string city = bookNode["city"].InnerText;
+            
+            foreach (var alarmRule in this.alarmRules)
+            {
+                if((alarmRule.Localization == "ANY" || alarmRule.Localization == city) &&
+                    (alarmRule.Element == "ANY" || alarmRule.Element == element))
+                {
+                    if(alarmRule.Condition.CompareValues(elementValue, alarmRule.ElementValue))
+                    {
+                        //ALARM!!!!!!!
+                        txtBoxAlarmXML.Text = "Alarm!!!" + Environment.NewLine +
+                            "Alarm Info: " + alarmRule.Localization + "\t" +
+                            alarmRule.Element + ":" + alarmRule.ElementValue + "\t" +
+                            alarmRule.Condition + Environment.NewLine + 
+                            "Entry Info: " + city + "\t" + element + ":" + elementValue +
+                            "\t" + date;
+                    }
+                }
+
+
+            }
+
         }
     }
 }
