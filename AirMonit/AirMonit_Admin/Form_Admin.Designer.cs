@@ -31,6 +31,7 @@
             this.comboBoxCities = new System.Windows.Forms.ComboBox();
             this.lblCities = new System.Windows.Forms.Label();
             this.groupBoxAlarms = new System.Windows.Forms.GroupBox();
+            this.listAlarmsInfo = new System.Windows.Forms.ListBox();
             this.btnFindAlarms = new System.Windows.Forms.Button();
             this.datePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.btnNO2 = new System.Windows.Forms.Button();
             this.lblDayStatistics = new System.Windows.Forms.Label();
             this.datePickerStatistics = new System.Windows.Forms.DateTimePicker();
-            this.listAlarmsInfo = new System.Windows.Forms.ListBox();
             this.groupBoxAlarms.SuspendLayout();
             this.groupBoxUsers.SuspendLayout();
             this.groupBoxStatistics.SuspendLayout();
@@ -89,6 +89,16 @@
             this.groupBoxAlarms.TabIndex = 5;
             this.groupBoxAlarms.TabStop = false;
             this.groupBoxAlarms.Text = "Alarms";
+            // 
+            // listAlarmsInfo
+            // 
+            this.listAlarmsInfo.Enabled = false;
+            this.listAlarmsInfo.FormattingEnabled = true;
+            this.listAlarmsInfo.ItemHeight = 27;
+            this.listAlarmsInfo.Location = new System.Drawing.Point(13, 233);
+            this.listAlarmsInfo.Name = "listAlarmsInfo";
+            this.listAlarmsInfo.Size = new System.Drawing.Size(311, 247);
+            this.listAlarmsInfo.TabIndex = 10;
             // 
             // btnFindAlarms
             // 
@@ -169,6 +179,7 @@
             // 
             // listView1
             // 
+            this.listView1.Enabled = false;
             this.listView1.Location = new System.Drawing.Point(8, 107);
             this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
@@ -251,16 +262,7 @@
             this.datePickerStatistics.Size = new System.Drawing.Size(201, 28);
             this.datePickerStatistics.TabIndex = 0;
             // 
-            // listAlarmsInfo
-            // 
-            this.listAlarmsInfo.FormattingEnabled = true;
-            this.listAlarmsInfo.ItemHeight = 27;
-            this.listAlarmsInfo.Location = new System.Drawing.Point(13, 233);
-            this.listAlarmsInfo.Name = "listAlarmsInfo";
-            this.listAlarmsInfo.Size = new System.Drawing.Size(311, 247);
-            this.listAlarmsInfo.TabIndex = 10;
-            // 
-            // Form1
+            // Form_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -271,7 +273,7 @@
             this.Controls.Add(this.lblCities);
             this.Controls.Add(this.comboBoxCities);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "Form_Admin";
             this.Text = "AirMonit Admin";
             this.groupBoxAlarms.ResumeLayout(false);
             this.groupBoxAlarms.PerformLayout();
